@@ -22,10 +22,10 @@ function handleRegister() {
     var email = form.get('email')
 
     for(var i=0;i<arr.length;i++) {
-        if(email == arr[i].email) {
+        if(email.length>3 && email == arr[i].email) {
             handleResponse("Account already exists")
         }
-        else{
+        else if(email.length>3 && email != arr[i].email){
             handleResponse("Registration sucess")
         }
     }
