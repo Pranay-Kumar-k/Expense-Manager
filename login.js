@@ -4,7 +4,7 @@ window.addEventListener('load',function() {
     var form = document.querySelector('form')
     // console.log(form)
     form.addEventListener('submit',getDetails)
-
+    
     
 })
 
@@ -23,13 +23,13 @@ function getDetails() {
     }
 
     for(var i=0;i<target.length;i++) {
-        if(email == target[i].email && password != target[i].password) {
+        if(email != target[i].email || password != target[i].password) {
             handleResponse('Wrong Password')
             return
         }
         if(email == target[i].email && password == target[i].password) {
             // console.log(email + 'login successful')
-            handleResponse('Login Successful')  
+            location.href = "dashboard.html"
         }
         else {
             handleResponse(`Account doesn't exists`)
@@ -39,7 +39,13 @@ function getDetails() {
 
 function handleResponse(str) {
     var cont = document.getElementById('handle') 
+    cont.innerHTML=""
     var para = document.createElement('para')
     para.innerHTML=str;
     cont.append(para)
  }
+
+ var btn = document.getElementById('register')
+    btn.addEventListener('click', function() {
+        location.href ="register.html"
+    })
