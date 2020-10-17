@@ -2,6 +2,10 @@ var arr=[]
 window.addEventListener('load',function() {
     var form = document.querySelector('form')
     form.addEventListener('submit',handleRegister)
+    var login =document.getElementById("login")
+    login.addEventListener('onclick',redirect)
+    
+
 })
 function handleRegister() {
     event.preventDefault()
@@ -14,15 +18,21 @@ function handleRegister() {
     }
     var password = form.get('password')
     if(password.length<6){
+
+        handlePassword("Password should me min 6 char")
+
         handleInput("Password should me min 6 char")
         return
     }
     var email = form.get('email')
 
     for(var i=0;i<arr.length;i++) {
-        if(email == arr[i].email) {
+        if(email.length>3 && email == arr[i].email) {
             handleResponse("Account already exists")
             return
+        }
+        else if(email.length>3 && email != arr[i].email){
+            handleResponse("Registration sucess")
         }
     }
     var payload = {
@@ -41,10 +51,27 @@ function handleInput(error){
     p.innerHTML=error;
     text.append(p)  
 }
+
+
+
 function handleResponse(str) {
     var cont = document.getElementById('handle') 
     cont.innerHTML=""
+
     var para = document.createElement('para')
     para.innerHTML=str;
     cont.append(para)
 }
+
+function redirect(){
+    
+   location.href = "login.html";
+}
+function handlePassword(error){
+    var text=document.getElementById('handlePassword').
+    text.innerHTML=""
+    var p=document.createElement('p')
+    p.innerHTML=error;
+    text.append(p)
+}
+
