@@ -17,7 +17,7 @@ function handleRegister() {
     }
     var password = form.get('password')
     if(password.length<6){
-        handleInput("Password should me min 6 char")
+        handlePassword("Password should me min 6 char")
     }
     var email = form.get('email')
 
@@ -26,7 +26,7 @@ function handleRegister() {
             handleResponse("Account already exists")
         }
         else{
-            handleResponse("sucess")
+            handleResponse("Registration sucess")
         }
     }
     var payload = {
@@ -53,4 +53,10 @@ function handleInput(error){
 function redirect(){
     
    location.href = "login.html";
+}
+function handlePassword(error){
+    var text=document.getElementById('handlePassword')
+    var p=document.createElement('p')
+    p.innerHTML=error;
+    text.append(p)
 }
