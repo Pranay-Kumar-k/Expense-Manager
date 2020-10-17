@@ -14,3 +14,6 @@ div{
     width:600px;
     height:auto;
 }
+#login{
+    border-radius: 10px;
+}
