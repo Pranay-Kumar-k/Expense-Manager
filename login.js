@@ -3,7 +3,9 @@ window.addEventListener('load',function() {
 
     var form = document.querySelector('form')
     // console.log(form)
-    form.addEventListener('submit',getDetails)    
+    form.addEventListener('submit',getDetails)
+    
+    
 })
 
 function getDetails() {
@@ -27,7 +29,7 @@ function getDetails() {
         }
         if(email == target[i].email && password == target[i].password) {
             // console.log(email + 'login successful')
-            handleResponse('Login Successful')  
+            location.href = "dashboard.html"
         }
         else {
             handleResponse(`Account doesn't exists`)
@@ -42,3 +44,8 @@ function handleResponse(str) {
     para.innerHTML=str;
     cont.append(para)
  }
+
+ var btn = document.getElementById('register')
+    btn.addEventListener('click', function() {
+        location.href ="register.html"
+    })
