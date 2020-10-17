@@ -21,8 +21,7 @@ function handleRegister() {
 
         handlePassword("Password should me min 6 char")
 
-        handleInput("Password should me min 6 char")
-        return
+       
     }
     var email = form.get('email')
 
