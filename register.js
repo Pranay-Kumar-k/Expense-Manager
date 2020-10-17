@@ -2,6 +2,10 @@ var arr=[]
 window.addEventListener('load',function() {
     var form = document.querySelector('form')
     form.addEventListener('submit',handleRegister)
+    var login =document.getElementById("login")
+    login.addEventListener('onclick',redirect)
+    
+
 })
 function handleRegister() {
     event.preventDefault()
@@ -21,6 +25,9 @@ function handleRegister() {
         if(email == arr[i].email) {
             handleResponse("Account already exists")
         }
+        else{
+            handleResponse("sucess")
+        }
     }
     var payload = {
         name:name,
@@ -38,8 +45,12 @@ function handleInput(error){
     text.append(p)  
 }
  function handleResponse(str) {
-    var cont = document.getElementById('handle') 
+    var cont = document.getElementById('handle') || "" 
     var para = document.createElement('para')
     para.innerHTML=str;
     cont.append(para)
+}
+function redirect(){
+    
+   location.href = "login.html";
 }
