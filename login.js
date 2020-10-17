@@ -23,13 +23,13 @@ function getDetails() {
     }
 
     for(var i=0;i<target.length;i++) {
-        if(email != target[i].email || password != target[i].password) {
-            handleResponse('Wrong Password')
-            return
-        }
         if(email == target[i].email && password == target[i].password) {
             // console.log(email + 'login successful')
             location.href = "dashboard.html"
+        }
+        else if(email == target[i].email || password != target[i].password) {
+            handleResponse('Wrong Password')
+            return
         }
         else {
             handleResponse(`Account doesn't exists`)
