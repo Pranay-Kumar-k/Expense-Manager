@@ -3,9 +3,7 @@ window.addEventListener('load',function() {
 
     var form = document.querySelector('form')
     // console.log(form)
-    form.addEventListener('submit',getDetails)
-
-    
+    form.addEventListener('submit',getDetails)    
 })
 
 function getDetails() {
@@ -23,7 +21,7 @@ function getDetails() {
     }
 
     for(var i=0;i<target.length;i++) {
-        if(email == target[i].email && password != target[i].password) {
+        if(email != target[i].email || password != target[i].password) {
             handleResponse('Wrong Password')
             return
         }
@@ -39,6 +37,7 @@ function getDetails() {
 
 function handleResponse(str) {
     var cont = document.getElementById('handle') 
+    cont.innerHTML=""
     var para = document.createElement('para')
     para.innerHTML=str;
     cont.append(para)
