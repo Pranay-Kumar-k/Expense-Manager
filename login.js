@@ -44,8 +44,3 @@ function handleResponse(str) {
     para.innerHTML=str;
     cont.append(para)
  }
-
- var btn = document.getElementById('register')
-    btn.addEventListener('click', function() {
-        location.href ="register.html"
-    })
