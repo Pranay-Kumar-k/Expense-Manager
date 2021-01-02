@@ -1,0 +1,19 @@
+* {
+    padding: 10px;
+}
+div{
+    margin-top: 10px;
+}
+#box{
+    align-items:center;
+    margin-left:26%;
+    margin-top:5%;
+    text-align:center;
+    background-color: bisque;
+    border:2px solid black;
+    width:600px;
+    height:auto;
+}
+#login{
+    border-radius: 10px;
+} 
