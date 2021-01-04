@@ -35,7 +35,7 @@ An application to track the user expenses. First ever collaboration Project
 
 <img src="https://github.com/pranaykumar999/Expense-Manager/blob/main/images/sidebar.png?raw=true" alt="sidebar">
 
-
+# Sample Data
 ```
 [
     {
