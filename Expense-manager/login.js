@@ -25,6 +25,11 @@ function getDetails() {
     for(var i=0;i<target.length;i++) {
         if(email == target[i].email && password == target[i].password) {
             // console.log(email + 'login successful')
+            var transaction = target[i].transactions
+            var name = target[i].name
+            var curr_user = {email:email,password:password,transactions:transaction,name:name}
+            console.log(curr_user)
+            localStorage.setItem("curr_user",JSON.stringify(curr_user))
             location.href = "dashboard.html"
         }
         else if(email == target[i].email || password != target[i].password) {

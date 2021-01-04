@@ -13,10 +13,21 @@
         <div id="mySidenav" class="sidenav">
             <a class="closebtn" onclick="closeNav()">&times;</a>
             <!-- write all the user profile details here -->
+            <div style="border: 2px solid white;height: 150px;width: 150px;border-radius: 50%;margin: 1% 20%;">
+                <img src="" id="image" width="150px" style="border-radius: 50%;padding: 15px;">
+            </div>
+            <div id="user">
+                <a>Profile</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="login.html">Logout</a>
+                <a href="#">Settings</a>
+            </div>
           </div>
 
         <div class="topnav">
             <a><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></a>
+            <a href="ledger.html">Ledger</a>
+            <a id="welcome"></a>
             <div class="search-container">
                 <input type="text" placeholder="Search.." name="search" id="search">
                 <button id="search-btn"><i class="fa fa-search"></i></button>
@@ -38,7 +49,7 @@
                         <div style="width: 20%;float: left;margin-left: 25%;">
                             <img src="https://www.flaticon.com/svg/static/icons/svg/25/25473.svg" alt="img" width="80px">
                         </div>
-                        <div style="width: 30%; float: right;font-size: 40px;font-weight: bold;">
+                        <div style="width: 30%; float: right;font-size: 40px;font-weight: bold;" id="total-income">
                             hello
                         </div>
                     </div>
@@ -46,7 +57,7 @@
                 <div class="item2">
                     <div style=" float: left;width: 100%;height: auto;">
                         <div style="width: 40%; float: left;">
-                            <img src="https://cdn2.iconfinder.com/data/icons/team-work-and-business-fill-style/64/income-profit-revenue-512.png" alt="img" width="100px">
+                            <img src="https://image.flaticon.com/icons/png/512/2258/2258244.png" alt="img" width="100px">
                         </div>
                         <div style="width: 40%;float: left;text-align: start;font-size: 40px;">
                             Total Expenses
@@ -56,7 +67,7 @@
                         <div style="width: 20%;float: left;margin-left: 25%;">
                             <img src="https://www.flaticon.com/svg/static/icons/svg/25/25473.svg" alt="img" width="80px">
                         </div>
-                        <div style="width: 30%; float: right;font-size: 40px;font-weight: bold;">
+                        <div style="width: 30%; float: right;font-size: 40px;font-weight: bold;" id="total-expenses">
                             hello
                         </div>
                     </div>
@@ -64,7 +75,7 @@
                 <div class="item3">
                     <div style=" float: left;width: 100%;height: auto;">
                         <div style="width: 40%; float: left;">
-                            <img src="https://cdn2.iconfinder.com/data/icons/team-work-and-business-fill-style/64/income-profit-revenue-512.png" alt="img" width="100px">
+                            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/wallet-2589880-2160621.png" alt="img" width="100px">
                         </div>
                         <div style="width: 40%;float: left;text-align: start;font-size: 40px;">
                             Balance
@@ -74,10 +85,58 @@
                         <div style="width: 20%;float: left;margin-left: 25%;">
                             <img src="https://www.flaticon.com/svg/static/icons/svg/25/25473.svg" alt="img" width="80px">
                         </div>
-                        <div style="width: 30%; float: right;font-size: 40px;font-weight: bold;">
+                        <div style="width: 30%; float: right;font-size: 40px;font-weight: bold;" id="balance">
                             hello
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div style="width: 45%;float: left;border-right: 5px solid whitesmoke;">
+                <form>
+                    <h2>Enter Transaction</h2>
+                    <div>
+                        <label for="title">Title : </label>
+                        <input type="text" name="title" placeholder="Title of Transaction" id="title">
+                    </div>
+                    <div>
+                        <label>Type of Transaction :</label>
+                        <div>
+                            <input type="radio" id="type" name="type" value="credit">
+                            <label for="credit">Credit</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="type" name="type" value="debit">
+                            <label for="debit">Debit</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="amount">Amount :</label>
+                        <input type="number" name="amount" id="amount" placeholder="Enter the amount">
+                    </div>
+                    <div>
+                        <input type="submit" value="SUBMIT" id="submit">
+                    </div>
+                </form>
+                <hr>
+            </div>
+
+            <div style="width: 55%; float: left;padding: 20px;">
+                <div>
+                    <h1>Recent Transactions</h1>
+                    <table>
+                        <thead>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Date of Transaction</th>
+                        </thead>
+                        <tbody id="table">
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

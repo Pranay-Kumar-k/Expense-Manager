@@ -1,10 +1,12 @@
-var arr=[]
+var arr = JSON.parse(localStorage.getItem('users')) || []
+
 window.addEventListener('load',function() {
     var form = document.querySelector('form')
     form.addEventListener('submit',handleRegister)
     var login =document.getElementById("login")
-    login.addEventListener('onclick',redirect)
+    login.addEventListener('click',redirect)
 
+    console.log(arr)
 
 })
 function handleRegister() {
@@ -31,17 +33,19 @@ function handleRegister() {
             handleResponse("Account already exists")
             return
         }
-        else if(email.length>3 && email != arr[i].email){
-            handleResponse("Registration sucess")
-        }
     }
     var payload = {
         name:name,
         password:password,
-        email:email
+        email:email,
+        transactions:[]
     }
     arr.push(payload)
+
     localStorage.setItem('users',JSON.stringify(arr))
+    setTimeout(() => {
+        location.href="login.html"
+    }, 2000);
     //  console.log(arr[0].email)
 }
 function handleInput(error){ 
@@ -64,7 +68,6 @@ function handleResponse(str) {
 }
 
 function redirect(){
-
    return location.href = "login.html";
 }
 function handlePassword(error){
