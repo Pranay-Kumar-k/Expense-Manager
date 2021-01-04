@@ -38,7 +38,9 @@ An application to track the user expenses. First ever collaboration Project
 
 ```
 [
-    {"name":"Pranay Kumar","password":"123456","email":"ak39666@gmail.com","transactions":[
+    {
+      "name":"Pranay Kumar","password":"123456","email":"ak39666@gmail.com",
+      "transactions":[
         {"title":"salary","amount":"10000","type":"credit","timestamp":"1/4/2021"},
         {"title":"shoes","amount":"1000","type":"debit","timestamp":"1/4/2021"},
         {"title":"rent","amount":"5000","type":"debit","timestamp":"1/4/2021"},
@@ -47,7 +49,11 @@ An application to track the user expenses. First ever collaboration Project
         {"title":"salary","amount":"50000","type":"credit","timestamp":"1/4/2021"}
         ]
     },
-    {"name":"bhupendra","password":"123456","email":"bhupendrasimha@gmail.com","transactions":[]}]
+    {
+      "name":"bhupendra","password":"123456","email":"bhupendrasimha@gmail.com",
+      "transactions":[]
+    }
+]
 ```
 
 # People
