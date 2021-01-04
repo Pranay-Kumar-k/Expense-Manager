@@ -15,11 +15,14 @@ function openNav() {
   var table  = document.getElementById("table")
   var welcome = document.getElementById("welcome")
   var image = document.getElementById('image')
-
-window.onload = () => {
-
+  
   var users = JSON.parse(localStorage.getItem("users"))
   var curr_user = JSON.parse(localStorage.getItem('curr_user'))
+
+
+  
+window.onload = () => {
+
 
   welcome.textContent = `Welcome, ${curr_user.name}`
 
@@ -28,27 +31,7 @@ window.onload = () => {
   }
   else image.setAttribute('src',"https://ca.slack-edge.com/T017PE6KCQK-U018F6NV9EC-f0be53e2bfec-512")
 
-  var balance = 0
-  var expenses = 0
-  var income = 0
-
-  for(var i=0; i<curr_user.transactions.length; i++) {
-    if(curr_user.transactions[i].type == 'credit') {
-      balance += Number(curr_user.transactions[i].amount)
-      income += Number(curr_user.transactions[i].amount)
-    }
-    else 
-    {
-      balance -= Number(curr_user.transactions[i].amount)
-      expenses += Number(curr_user.transactions[i].amount)
-    }
-  }
-
-  console.log(balance);
-  balanceAmount.textContent = balance
-  totalExpenses.textContent = expenses
-  totalIncome.textContent = income
-
+  
   printTransactions(curr_user.transactions)
 
   console.log(curr_user.transactions);
@@ -92,6 +75,27 @@ window.onload = () => {
 }
 
 function printTransactions(arr) {
+  var balance = 0
+  var expenses = 0
+  var income = 0
+
+  for(var i=0; i<curr_user.transactions.length; i++) {
+    if(curr_user.transactions[i].type == 'credit') {
+      balance += Number(curr_user.transactions[i].amount)
+      income += Number(curr_user.transactions[i].amount)
+    }
+    else 
+    {
+      balance -= Number(curr_user.transactions[i].amount)
+      expenses += Number(curr_user.transactions[i].amount)
+    }
+  }
+
+  console.log(balance);
+  balanceAmount.textContent = balance
+  totalExpenses.textContent = expenses
+  totalIncome.textContent = income
+
   table.innerHTML = ""
   for(var i=0; i<arr.length; i++) {
     var row = document.createElement('tr')
