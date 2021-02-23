@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+</head>
+<body>
+    <div style="margin: 10% 30% 0% 30%;">
+        <h1>Expense Manager</h1>
+
+        <div>
+            <p>Please create an account to record your transactions. 
+                <button id="register">Register</button>
+            </p>
+        </div>
+    </div>
+    <script>
+        var registerButton = document.getElementById("register")
+        registerButton.addEventListener("click", () => {
+            location.href = "register.html"
+        })
+        
+    </script>
+</body>
+</html>
